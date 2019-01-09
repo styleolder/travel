@@ -18,7 +18,6 @@ export default {
       swiperOption: {
         autoplay: 3000,
         pagination: '.swiper-pagination'
-
       },
       swiperList: [{
         id: '001',
