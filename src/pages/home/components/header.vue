@@ -7,7 +7,7 @@
          <span class="iconfont">&#xe639;</span>
          输入城市/景点/游玩主题
        </div>
-       <div class="header-right">城市
+       <div class="header-right">西安
           <span class="iconfont arrow-icon">&#xe6aa;</span>
        </div>
     </div>
@@ -19,35 +19,36 @@ export default {
 </script>
 <style lang="stylus" scoped>
   .header
-    line-height: .86rem
+    line-height: 44px
+    height: 44px
     display: flex
     background: #00bcd4
     color: #ffffff
     .header-left
-      width: .68rem
-      height: .86rem
+      width: 40px
+      height: 100%
       float: right
       .back-icon
         font-size: .4rem
         text-align: center
+        padding-left: 10px
+        padding-right: 10px
     .header-input
       flex: 1
+      line-height: 34px
+      height: 34px
       background: #ffffff
       border-radius: .1rem
-      margin-top: .12rem
-      line-height: .64rem
-      margin-bottom: .12rem
-      margin-left: .2rem
-      margin-right: .2rem
+      margin-top: 5px
+      margin-bottom: 5px
       color: #cccccc
       padding-left: .2px
       span
         padding-left .2rem
     .header-right
-      width: 1.24rem
+      padding-left: 11px
+      padding-right: 11px
       float: right
       .arrow-icon
-        font-size: .3rem
-        margin-left: -.05rem
-
+        margin-left: -4.5px
 </style>
