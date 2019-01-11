@@ -1,11 +1,12 @@
 <template>
   <div class="weeked">
     <div class="weeked-title">
-          周末去哪儿
+      周末去哪儿
     </div>
     <div class="weeked-info">
       <div class="weeked-warpper">
-        <img class="weeked-img" src="http://img1.qunarzz.com/sight/source/1812/4e/77bab696d56366.jpg_r_640x214_f86f2b40.jpg"/>
+        <img class="weeked-img"
+             src="http://img1.qunarzz.com/sight/source/1812/4e/77bab696d56366.jpg_r_640x214_f86f2b40.jpg"/>
       </div>
       <div class="weeked-content">
         <p class="weeked-content-title">西安泡汤圣地</p>
@@ -14,7 +15,8 @@
     </div>
     <div class="weeked-info">
       <div class="weeked-warpper">
-        <img class="weeked-img" src="http://img1.qunarzz.com/sight/source/1505/19/58f233e11df7ef.jpg_r_640x214_6b42c9fc.jpg"/>
+        <img class="weeked-img"
+             src="http://img1.qunarzz.com/sight/source/1505/19/58f233e11df7ef.jpg_r_640x214_6b42c9fc.jpg"/>
       </div>
       <div class="weeked-content">
         <p class="weeked-content-title">西安必打卡</p>
@@ -23,7 +25,8 @@
     </div>
     <div class="weeked-info">
       <div class="weeked-warpper">
-        <img class="weeked-img" src="http://img1.qunarzz.com/sight/source/1811/63/808c022b285a2c.jpg_r_640x214_ad984479.jpg"/>
+        <img class="weeked-img"
+             src="http://img1.qunarzz.com/sight/source/1811/63/808c022b285a2c.jpg_r_640x214_ad984479.jpg"/>
       </div>
       <div class="weeked-content">
         <p class="weeked-content-title">探寻文化古都</p>
@@ -32,7 +35,8 @@
     </div>
     <div class="weeked-info">
       <div class="weeked-warpper">
-        <img class="weeked-img" src="http://img1.qunarzz.com/sight/source/1811/63/808c022b285a2c.jpg_r_640x214_ad984479.jpg"/>
+        <img class="weeked-img"
+             src="http://img1.qunarzz.com/sight/source/1811/63/808c022b285a2c.jpg_r_640x214_ad984479.jpg"/>
       </div>
       <div class="weeked-content">
         <p class="weeked-content-title">探寻文化古都</p>
@@ -49,45 +53,55 @@
   </div>
 </template>
 <script>
-export default {
-  name: 'HomeWeeked'
-}
+  export default {
+    name: 'HomeWeeked'
+  }
 </script>
 <style lang="stylus" scoped>
   .weeked
     background: #EDEDED
+
   .weeked-price-info
-    width:100%
+    width: 100%
     margin-top: .1rem
     padding: .1rem
     background: #ffffff
+
     .weeked-price-icon
       width: 16px
       height: 16px
       padding-left .1rem
       float: left
+
     .weeked-price-desc
       margin-left: .48rem
       font-size: .28rem
+
       .weeked-price-desc-highlight
         font-weight: bold
+
   .weeked-info
     background: #ffffff
     margin-bottom: .1rem
+
     .weeked-warpper
       overflow: hidden
       height: 0
       padding-bottom: 37%
+
       .weeked-img
         width: 100%
+
   .weeked-title
     height .8rem
     line-height .8rem
     font-size: .36rem
     background: #EDEDED
     text-indent: .28rem
+
   .weeked-content
     padding 7px 10px 10px 10px
+
     .weeked-content-title
       overflow: hidden;
       padding-right: 1.4rem
@@ -96,6 +110,7 @@ export default {
       line-height: .48rem
       white-space: nowrap
       text-overflow: ellipsis
+
     .weeked-content-desc
       display: inline-block
       width: 100%
