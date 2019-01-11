@@ -17,7 +17,11 @@
 <script>
   export default {
     name: 'HomeIcons',
-    props: ['iconsList'],
+    props: {
+      iconsList: {
+        typo: Array
+      }
+    },
     data () {
       return {
         notNextTick: true,

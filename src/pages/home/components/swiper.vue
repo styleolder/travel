@@ -12,7 +12,11 @@
 <script>
   export default {
     name: 'HomeSwiper',
-    props: ['swiperList'],
+    props: {
+      swiperList: {
+        type: Array
+      }
+    },
     data () {
       return {
         notNextTick: true,

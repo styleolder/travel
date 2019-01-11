@@ -38,7 +38,11 @@
 <script>
   export default {
     name: 'HomeRecommend',
-    props: ['recommendList']
+    props: {
+      recommendList: {
+        type: Array
+      }
+    }
   }
 </script>
 <style lang="stylus" scoped>
