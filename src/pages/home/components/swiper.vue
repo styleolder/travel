@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="swipered">
     <swiper :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
       <swiper-slide v-for="slide in swiperList" :key="slide.id">
         <img class="swiper-img" :src="slide.imgUrl" />
@@ -43,13 +43,13 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-  .wrapper >>> .swiper-pagination-bullet-active
-    background #ffffff !important
-  .wrapper
+  .swipered >>> .swiper-pagination-bullet-active
+    background: #ffffff  !important
+  .swipered >>> .swiper-img
+    width: 100%
+  .swiper
     width: 100%
     height: 0
     overflow: hidden
     padding-bottom: 26.7%
-    .swiper-img
-      width: 100%
 </style>

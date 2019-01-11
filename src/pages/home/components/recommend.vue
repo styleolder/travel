@@ -1,5 +1,5 @@
 <template>
-  <div class="warpper">
+  <div class="recommend">
       <ul class="recommend-items">
         <div class="hot-title">
           <img class="hot-title-img" src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png">
@@ -60,22 +60,26 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-  .warpper
+  .recommend
     background #EDEDED
     width:100%
-    height: .2rem
+    height: auto
   .recommend-more
     text-align: center
+    background: #ffffff
     color: #00afc7
     padding: .2rem 0;
     font-size: .2rem;
     line-height: .4rem;
   .recommend-items
-    margin-left: .2rem
     padding-top: .28rem
+    .recommend-item
+      padding-left .28rem
     .hot-title
       padding-top .2rem
+      padding-left .28rem
       padding-bottom .2rem
+      background: #ffffff
       color: #212121
       line-height: .6rem
       height: .6rem
