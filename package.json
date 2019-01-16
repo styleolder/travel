@@ -2,10 +2,10 @@
   "name": "travel",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "zhanghonged <zhanghonged@126.com>",
+  "author": "style <410178050@163.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --host 0.0.0.0 --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
@@ -18,6 +18,7 @@
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^2.6.7",
     "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
     "webpack-dev-server": "^2.9.11"
   },
   "devDependencies": {

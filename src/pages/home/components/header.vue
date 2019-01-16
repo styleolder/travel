@@ -7,25 +7,23 @@
       <span class="iconfont">&#xe639;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">{{ this.city }}
-      <span class="iconfont arrow-icon">&#xe6aa;</span>
-    </div>
+    <router-link to='/city'>
+      <div class="header-right">{{ this.$store.state.city }}
+        <span class="iconfont arrow-icon">&#xe6aa;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
   export default {
-    name: 'HomeHeader',
-    props: {
-      city: {
-        type: String
-      }
-    }
+    name: 'HomeHeader'
   }
 </script>
 <style lang="stylus" scoped>
+  @import '~@/assets/styles/iconfont/varibles.styl'
   .header
-    line-height: 44px
-    height: 44px
+    line-height: $headerHeight
+    height: $headerHeight
     display: flex
     background: #00bcd4
     color: #ffffff
@@ -34,7 +32,9 @@
       width: 40px
       height: 100%
       float: right
-
+      text-align: center
+    .header-right
+      color: #ffffff
       .back-icon
         font-size: .4rem
         text-align: center
