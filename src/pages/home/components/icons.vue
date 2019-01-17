@@ -19,7 +19,7 @@
     name: 'HomeIcons',
     props: {
       iconsList: {
-        typo: Array
+        type: Array
       }
     },
     data () {
