@@ -13,7 +13,7 @@
   .search
     background:#00bcd4
     height: .72rem
-    padding: 0  .1rem
+    padding: .01rem  .1rem
     .search-input
       background:#ffffff
       border-radius:5px

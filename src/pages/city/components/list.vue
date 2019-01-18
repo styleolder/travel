@@ -13,9 +13,9 @@
     <div class="list-order">
       <div class="list-order-title list-title">字母排序</div>
       <ul class="list-order-content list-desc">
-        <router-link to='/' class="list-host-li" v-for="(item, index) in cities" :key="index">
+        <li class="list-host-li" v-for="(item, index) in cities" :key="index" @click="returnList(index)">
           {{ index }}
-        </router-link>
+        </li>
       </ul>
     </div>
     <div class="list-city" v-for="(item, index) in cities" :key="index">
@@ -37,6 +37,11 @@
       },
       cities: {
         type: Object
+      }
+    },
+    methods: {
+      returnList (id) {
+        document.querySelector('#' + id).scrollIntoView(true)
       }
     }
   }

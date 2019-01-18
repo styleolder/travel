@@ -49,6 +49,10 @@ export default {
       }
     }
   },
+  created () {
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  },
   mounted () {
     this.getHomeInfo()
   }
