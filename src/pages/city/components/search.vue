@@ -5,7 +5,7 @@
     </div>
     <div class="search-content" v-show="keyword">
       <ul>
-        <li class="search-content-desc" v-for="(item , index) in list" :key="index">
+        <li class="search-content-desc" v-for="(item , index) in list" :key="index" @click="handleCityClick(item.name)">
           {{ item.name }}
         </li>
         <li class="search-content-desc search-content-care" v-show="hasNoDate">没有找到匹配数据</li>
@@ -31,6 +31,12 @@
     computed: {
       hasNoDate () {
         return !this.list.length
+      }
+    },
+    methods: {
+      handleCityClick (cityname) {
+        this.$store.dispatch('changeCity', cityname)
+        this.$router.push('/')
       }
     },
     watch: {

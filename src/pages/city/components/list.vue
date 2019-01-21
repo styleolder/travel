@@ -5,9 +5,9 @@
         热门城市
       </div>
       <ul class="list-desc">
-        <router-link to='/' tag="li" class="list-host-li" v-for="(hotcity, index) in hotCities" :key="index">
+        <li @click="handleCityClick(hotcity.name)" class="list-host-li" v-for="(hotcity, index) in hotCities" :key="index">
           {{ hotcity.name }}
-        </router-link>
+        </li>
       </ul>
     </div>
     <div class="list-order">
@@ -21,9 +21,9 @@
     <div class="list-city" v-for="(item, index) in cities" :key="index">
       <div class="list-city-number list-title" :id="index">{{ index }}</div>
       <ul class="list-city-list list-desc">
-        <router-link to='/' tag="li" class="list-host-li" v-for="(city, id) in item" :key="id">
+        <li class="list-host-li" v-for="(city, id) in item" :key="id" @click="handleCityClick(city.name)">
           {{ city.name }}
-        </router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -42,6 +42,10 @@
     methods: {
       returnList (id) {
         document.querySelector('#' + id).scrollIntoView(true)
+      },
+      handleCityClick (cityname) {
+        this.$store.dispatch('changeCity', cityname)
+        this.$router.push('/')
       }
     }
   }
