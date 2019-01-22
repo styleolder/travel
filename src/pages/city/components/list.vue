@@ -44,8 +44,13 @@
         document.querySelector('#' + id).scrollIntoView(true)
       },
       handleCityClick (cityname) {
-        this.$store.dispatch('changeCity', cityname)
-        this.$router.push('/')
+        this.$store.dispatch('changeCity', cityname).then(
+          res => {
+            this.$router.push('/')
+          }
+        ).catch(err => {
+          console.log(err)
+        })
       }
     }
   }

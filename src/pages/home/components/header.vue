@@ -8,15 +8,21 @@
       输入城市/景点/游玩主题
     </div>
     <router-link to='/city'>
-      <div class="header-right">{{ this.$store.state.city }}
+      <div class="header-right">{{ this.doubleCity }}
         <span class="iconfont arrow-icon">&#xe6aa;</span>
       </div>
     </router-link>
   </div>
 </template>
 <script>
+import { mapState, mapGetters } from 'vuex'
+
   export default {
-    name: 'HomeHeader'
+    name: 'HomeHeader',
+    computed: {
+      ...mapState(['city']),
+      ...mapGetters(['doubleCity'])
+    }
   }
 </script>
 <style lang="stylus" scoped>
@@ -33,14 +39,6 @@
       height: 100%
       float: right
       text-align: center
-    .header-right
-      color: #ffffff
-      .back-icon
-        font-size: .4rem
-        text-align: center
-        padding-left: 10px
-        padding-right: 10px
-
     .header-input
       flex: 1
       line-height: 34px
@@ -51,15 +49,13 @@
       margin-bottom: 5px
       color: #cccccc
       padding-left: .2px
-
       span
         padding-left .2rem
-
     .header-right
+      color: #ffffff
       padding-left: 11px
       padding-right: 11px
       float: right
-
       .arrow-icon
         margin-left: -4.5px
 </style>

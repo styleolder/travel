@@ -8,8 +8,8 @@
         <li class="search-content-desc" v-for="(item , index) in list" :key="index" @click="handleCityClick(item.name)">
           {{ item.name }}
         </li>
-        <li class="search-content-desc search-content-care" v-show="hasNoDate">没有找到匹配数据</li>
       </ul>
+      <li class="search-content-desc search-content-care" v-show="hasNoDate">没有找到匹配数据</li>
     </div>
   </div>
 </template>
@@ -60,7 +60,7 @@
             })
           }
           this.list = result
-        }, 200)
+        }, 100)
       }
     }
   }
