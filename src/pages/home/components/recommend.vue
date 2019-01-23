@@ -9,7 +9,7 @@
           <span class="hot-title-right-icon iconfont">&#xe664;</span>
         </div>
       </div>
-      <li class="recommend-item" v-for="(recommend, index) in recommendList" :key="index">
+      <router-link tag="li" class="recommend-item" v-for="(recommend, index) in recommendList" :key="index" :to="'/detail/' + recommend.id">
         <img class="item-img" :src="recommend.imgUrl"/>
         <div class="item-info" :key="recommend.id">
           <div class="item-info-title">{{ recommend.title }}</div>
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-      </li>
+      </router-link>
     </ul>
     <div class="recommend-more">
       查看所有产品

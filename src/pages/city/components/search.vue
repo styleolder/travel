@@ -88,6 +88,7 @@
       line-height: .62rem
       padding-left .2rem
       padding-top: .1rem
+      background: #eee
     .search-content-care
       font-size: .32rem
       font-weight: bold
