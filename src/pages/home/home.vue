@@ -53,10 +53,6 @@ export default {
       }
     }
   },
-  created () {
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-  },
   mounted () {
     this.lastCity = this.city
     this.getHomeInfo()
@@ -66,8 +62,6 @@ export default {
       this.getHomeInfo()
       this.lastCity = this.city
     }
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
   }
 }
 </script>

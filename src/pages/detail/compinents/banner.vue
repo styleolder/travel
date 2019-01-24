@@ -1,21 +1,42 @@
 <template>
-  <div class="banner">
-    <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1508/c5/a017645d82ab89f271fdfb1bd6ecc2e0.water.jpg_600x330_370cb642.jpg">
-    <div class="banner-info">
-      <div class="banner-imgswipericon">
-        <span class="banner-imgswipericon-icon iconfont">&#xe7b3;</span>
-        <span class="banner-imgswipericon-number">16</span>
+  <div class="container">
+    <div class="banner" @click="handleBannerClick">
+      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1508/c5/a017645d82ab89f271fdfb1bd6ecc2e0.water.jpg_600x330_370cb642.jpg">
+      <div class="banner-info">
+        <div class="banner-imgswipericon">
+          <span class="banner-imgswipericon-icon iconfont">&#xe7b3;</span>
+          <span class="banner-imgswipericon-number">16</span>
+        </div>
+        <div class="banner-img-title">秦岭野生动物园(AAAA景区)</div>
       </div>
-      <div class="banner-img-title">秦岭野生动物园(AAAA景区)</div>
+      <router-link tag="a" class="banner-back" to="/">
+        <span class="banner-icon iconfont">&#xe625;</span>
+      </router-link>
     </div>
-    <div class="banner-back">
-      <span class="banner-icon iconfont">&#xe625;</span>
-    </div>
+    <common-gallary v-show="showGallary" @handleGallaryClick="handleGallaryClick"></common-gallary>
   </div>
 </template>
 <script>
+  import CommonGallary from '@/common/gallary/Gallary'
   export default {
-    name: 'DetailBanner'
+    name: 'DetailBanner',
+    components: {
+      CommonGallary
+    },
+    data () {
+      return {
+        showGallary: false
+      }
+    },
+    methods: {
+      handleBannerClick () {
+        this.showGallary = !this.showGallary
+      },
+      handleGallaryClick () {
+        this.showGallary = !this.showGallary
+      }
+    }
+
   }
 </script>
 <style lang="stylus" scoped>
