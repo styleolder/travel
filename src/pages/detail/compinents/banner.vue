@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1508/c5/a017645d82ab89f271fdfb1bd6ecc2e0.water.jpg_600x330_370cb642.jpg">
+      <img class="banner-img"
+           src="//img1.qunarzz.com/sight/p0/1508/c5/a017645d82ab89f271fdfb1bd6ecc2e0.water.jpg_600x330_370cb642.jpg">
       <div class="banner-info">
         <div class="banner-imgswipericon">
           <span class="banner-imgswipericon-icon iconfont">&#xe7b3;</span>
@@ -9,9 +10,6 @@
         </div>
         <div class="banner-img-title">秦岭野生动物园(AAAA景区)</div>
       </div>
-      <router-link tag="a" class="banner-back" to="/">
-        <span class="banner-icon iconfont">&#xe625;</span>
-      </router-link>
     </div>
     <common-gallary v-show="showGallary" @handleGallaryClick="handleGallaryClick"></common-gallary>
   </div>
@@ -30,10 +28,10 @@
     },
     methods: {
       handleBannerClick () {
-        this.showGallary = !this.showGallary
+        this.showGallary = true
       },
       handleGallaryClick () {
-        this.showGallary = !this.showGallary
+        this.showGallary = false
       }
     }
 
@@ -47,21 +45,6 @@
     position: relative
     .banner-img
       width: 100%
-    .banner-back
-      height: .72rem;
-      display: inline-block
-      width: .72rem;
-      line-height: .72rem
-      position: absolute
-      left: .1rem
-      top: .1rem
-      background-color: #000
-      opacity: 0.5
-      text-align: center
-      border-radius: 50%
-      .banner-icon
-        color: #fff
-        font-size: .36rem
     .banner-info
       position: absolute
       left: 0

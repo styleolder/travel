@@ -24,7 +24,7 @@
     .index-back
       display: inline-block
       position: absolute
-      font-size: 16px;
+      font-size: .32px;
       width: .8rem
       left: 0
       top: 0
