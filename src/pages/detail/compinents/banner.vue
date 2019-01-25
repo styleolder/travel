@@ -11,14 +11,18 @@
         <div class="banner-img-title">秦岭野生动物园(AAAA景区)</div>
       </div>
     </div>
-    <common-gallary v-show="showGallary" @handleGallaryClick="handleGallaryClick"></common-gallary>
+    <common-fade>
+      <common-gallary v-show="showGallary" @handleGallaryClick="handleGallaryClick"></common-gallary>
+    </common-fade>
   </div>
 </template>
 <script>
   import CommonGallary from '@/common/gallary/Gallary'
+  import CommonFade from '@/common/fade/Fade'
   export default {
     name: 'DetailBanner',
     components: {
+      CommonFade,
       CommonGallary
     },
     data () {
