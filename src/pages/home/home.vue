@@ -17,6 +17,8 @@ import HomeRecommend from './components/recommend'
 import HomeWeeked from './components/weeked'
 import axios from 'axios'
 import { mapState } from 'vuex'
+// import { baseUrl } from '@/config'
+
 export default {
   name: 'Home',
   components: {

@@ -11,6 +11,8 @@ import '@/assets/styles/border.css'
 import '@/assets/styles/iconfont/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 import store from './store'
+// if (process.env.NODE_ENV !== 'prod') require('@/mock')
+// import Mock from '@/mock'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)

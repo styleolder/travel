@@ -6,13 +6,30 @@
     <button @click="handleCityClick">点击我</button>
     <p>{{ appversion }}</p>
     <button @click="handleSetNameClick">点击我</button>
+    <p></p>
+    <input type="number" v-model.number="countVal">
+    <button @click="handleChangCouter">点击修改countVal</button>
+    <count-to :end-val="this.endVal" class="countclass" ref="getcount">
+      <span v-show="endVal" slot="count-left">总金额: </span>
+      <span v-show="endVal" slot="count-right">元</span>
+    </count-to>
   </div>
 </template>
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
+import countTo from '@/components/count-to'
 
 export default {
   name: 'Login',
+  components: {
+    countTo
+  },
+  data () {
+    return {
+      endVal: 0,
+      countVal: 0
+    }
+  },
   beforeRouteEnter (to, from, next) {
     console.log(to.name)
     console.log(from.name)
@@ -37,6 +54,13 @@ export default {
     ...mapActions([
       'updateUserName'
     ]),
+    handleEnd (endVal) {
+      console.log(endVal)
+    },
+    handleChangCouter () {
+      this.endVal = this.countVal
+      this.$refs.getcount.getCount()
+    },
     handleCityClick () {
       // this.$store.commit(
       //   'loginChangeCity',
@@ -57,3 +81,10 @@ export default {
   }
 }
 </script>
+<style lang="stylus" scoped>
+  @import '~@/assets/styles/iconfont/varibles.styl'
+  .countclass {
+    font-size 24px
+    color greenyellow
+  }
+</style>
