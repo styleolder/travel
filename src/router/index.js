@@ -1,34 +1,32 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/Home'
-import City from '@/pages/city/City'
-import Detail from '@/pages/detail/Detail'
+import { routes } from './router'
+import { setTitle } from '@/lib/util'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      // component: () => import('@/pages/home/Home')
-      component: Home
-    },
-    {
-      path: '/city',
-      name: 'City',
-      component: City
-    },
-    {
-      path: '/detail/:id',
-      name: 'Detail',
-      component: Detail
-    }
-  ],
-  scrollBehavior (to, from, savePosition) {
-    return {
-      y: 0,
-      x: 0
-    }
+const router = new Router({
+  mode: 'history',
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    return {x: 0, y: 0}
   }
 })
+router.beforeEach((to, from, next) => {
+  to.meta && setTitle(to.meta.title)
+  next()
+})
+// const HAS_LOGINED = true
+// router.beforeEach((to, from, next) => {
+//   to.meta && setTitle(to.meta.title)
+//   if (to.name === 'Home') {
+//     next()
+//   } else if (to.name !== 'Login') {
+//     if (HAS_LOGINED) next()
+//     else next({name: 'Login'})
+//   } else {
+//     if (HAS_LOGINED) next({name: 'Home'})
+//     else next()
+//   }
+// })
+export default router

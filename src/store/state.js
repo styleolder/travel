@@ -1,9 +1,11 @@
-let defaultCity = '西安'
+let defaultcity = '西安'
 try {
   if (localStorage.city) {
-    defaultCity = localStorage.city
+    defaultcity = localStorage.city
   }
 } catch (e) {}
-export default {
-  city: defaultCity
+
+const state = {
+  city: defaultcity
 }
+export default state

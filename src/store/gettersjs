@@ -1,0 +1,7 @@
+const getters = {
+  cityVersion: (state) => {
+    return state.city + '市区'
+  }
+}
+
+export default getters

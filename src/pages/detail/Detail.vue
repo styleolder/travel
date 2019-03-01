@@ -1,5 +1,6 @@
 <template>
   <div class="detail">
+    <div>{{ id }}</div>
     <detail-banner></detail-banner>
     <detail-header></detail-header>
     <detail-content :list="categoryList"></detail-content>
@@ -13,6 +14,12 @@ import axios from 'axios'
 
 export default {
   name: 'Detail',
+  props: {
+    id: {
+      type: String,
+      default: '123456'
+    }
+  },
   components: {
     DetailContent,
     DetailHeader,
@@ -45,6 +52,14 @@ export default {
   },
   mounted () {
     this.getDetailList()
+  },
+  beforeRouteLeave (to, form, next) {
+      const leave = confirm('leave to this page')
+      if (leave) {
+        next()
+      } else {
+        next(false)
+      }
   }
 }
 </script>
