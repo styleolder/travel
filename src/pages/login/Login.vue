@@ -13,21 +13,26 @@
       <span v-show="endVal" slot="count-left">总金额: </span>
       <span v-show="endVal" slot="count-right">元</span>
     </count-to>
+    <div class="split-pane-con">
+      <split-pane v-model="paneLeftWidth"></split-pane>
+    </div>
   </div>
 </template>
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
-import countTo from '@/components/count-to'
-
+import CountTo from '@/components/count-to'
+import SplitPane from '@/components/split-pane'
 export default {
   name: 'Login',
   components: {
-    countTo
+    CountTo,
+    SplitPane
   },
   data () {
     return {
       endVal: 0,
-      countVal: 0
+      countVal: 0,
+      paneLeftWidth: 0.5
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -86,5 +91,10 @@ export default {
   .countclass {
     font-size 24px
     color greenyellow
+  }
+  .split-pane-con {
+    width  300px
+    height 200px
+    background-color #ffb436
   }
 </style>

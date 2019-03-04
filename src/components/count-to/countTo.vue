@@ -6,7 +6,7 @@
 <script>
 import CountUp from 'countup'
 export default {
-  name: 'countTo',
+  name: 'CountTo',
   data () {
     return {
       counter: {}

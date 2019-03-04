@@ -1,2 +1,2 @@
-import countTo from './countTo'
-export default countTo
+import CountTo from './countTo'
+export default CountTo

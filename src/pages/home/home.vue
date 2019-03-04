@@ -67,3 +67,6 @@ export default {
   }
 }
 </script>
+<style lang="stylus" scoped>
+  @import '~@/assets/styles/iconfont/varibles.styl'
+</style>
