@@ -16,23 +16,31 @@
     <div class="split-pane-con">
       <split-pane v-model="paneLeftWidth"></split-pane>
     </div>
+    用户名：<input type="text" v-model="username">
+    密码：<input type="password" v-model="password">
+    <button @click="handleUserLogin">登录</button>
+    <LoginLayout class="login-layout"></LoginLayout>
   </div>
 </template>
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
 import CountTo from '@/components/count-to'
 import SplitPane from '@/components/split-pane'
+import LoginLayout from './components/layout'
 export default {
   name: 'Login',
   components: {
     CountTo,
-    SplitPane
+    SplitPane,
+    LoginLayout
   },
-  data () {
+  data() {
     return {
       endVal: 0,
       countVal: 0,
-      paneLeftWidth: 0.5
+      paneLeftWidth: 0.5,
+      username: '',
+      password: ''
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -57,7 +65,8 @@ export default {
       'SET_USER_NAME'
     ]),
     ...mapActions([
-      'updateUserName'
+      'updateUserName',
+      'userlogin'
     ]),
     handleEnd (endVal) {
       console.log(endVal)
@@ -65,6 +74,8 @@ export default {
     handleChangCouter () {
       this.endVal = this.countVal
       this.$refs.getcount.getCount()
+      console.log(process.env.NODE_ENV)
+      console.log(process.env.BASE_URL)
     },
     handleCityClick () {
       // this.$store.commit(
@@ -82,6 +93,15 @@ export default {
     },
     handleSetNameClick () {
       this.updateUserName()
+    },
+    handleUserLogin () {
+      this.userlogin(this.username, this.password).then(() => {
+        this.$router.push({
+          name: 'Home'
+        })
+      }).catch(error => {
+        console.log(error)
+      })
     }
   }
 }
@@ -96,5 +116,9 @@ export default {
     width  300px
     height 200px
     background-color #ffb436
+  }
+  .login-layout {
+    width 100%
+    height 600px
   }
 </style>

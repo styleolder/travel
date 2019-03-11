@@ -19,14 +19,11 @@ router.beforeEach((to, from, next) => {
 // const HAS_LOGINED = true
 // router.beforeEach((to, from, next) => {
 //   to.meta && setTitle(to.meta.title)
-//   if (to.name === 'Home') {
+//   if (to.name === 'Login') {
 //     next()
 //   } else if (to.name !== 'Login') {
-//     if (HAS_LOGINED) next()
+//     if (getToken()) next()
 //     else next({name: 'Login'})
-//   } else {
-//     if (HAS_LOGINED) next({name: 'Home'})
-//     else next()
 //   }
 // })
 export default router

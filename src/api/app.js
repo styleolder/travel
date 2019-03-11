@@ -1,3 +1,4 @@
+import axios from 'axios'
 export const getUserName = () => {
   return new Promise((resolve, reject) => {
     const err = null
@@ -15,3 +16,13 @@ export const getUserName = () => {
     })
   })
 }
+export const userlogin = ({username, passsword}) => {
+  return axios.request({
+    url: '/api/user.json',
+    method: 'get',
+    data: {
+      username,
+      passsword
+    }
+  })
+  }

@@ -18,7 +18,6 @@ import HomeWeeked from './components/weeked'
 import axios from 'axios'
 import { mapState } from 'vuex'
 // import { baseUrl } from '@/config'
-
 export default {
   name: 'Home',
   components: {
@@ -68,5 +67,5 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-  @import '~@/assets/styles/iconfont/varibles.styl'
+@import '~@/assets/styles/iconfont/varibles.styl'
 </style>
