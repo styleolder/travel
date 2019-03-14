@@ -46,25 +46,101 @@
             <router-view/>
           </card>
           <login-table></login-table>
+          <login-upload></login-upload>
+          <div class="form-wrapper">
+            <FormGroup :list="formList"></FormGroup>
+          </div>
         </content>
       </Layout>
     </Layout>
   </div>
 </template>
 <script>
-import LoginTable from './table'
+  import LoginTable from './table'
+  import LoginUpload from './upload'
+  import FormGroup from './formgroup'
+
   export default {
     name: 'LoginLayout',
     components: {
-      LoginTable
+      LoginTable,
+      LoginUpload,
+      FormGroup
     },
-    data () {
+    data() {
       return {
-        collapsed: false
+        collapsed: false,
+        formList: [
+          {
+            name: 'name',
+            type: 'i-input',
+            value: '',
+            label: '姓名',
+            rule: [{
+               required: true, message: 'The name cannot be empty', trigger: 'blur'
+            }]
+          },
+           {
+            name: 'i-Switch',
+            type: 'i-switch',
+            value: true,
+            label: '在职'
+          },
+          {
+            name: 'range',
+            type: 'slider',
+            value: [10, 40],
+            range: true,
+            label: '范围'
+          },
+          {
+            name: 'RadioGroup ',
+            type: 'RadioGroup',
+            style: 'button',
+            value: 1,
+            label: '学历',
+            children: {
+              type: 'Radio',
+              name: 'Radio',
+              list: [
+                {
+                  label: 1,
+                  title: '大专'
+                },
+                {
+                  label: 2,
+                  title: '本科'
+                },
+                {
+                  label: 3,
+                  title: '研究生'
+                }
+              ]
+            }
+          },
+          {
+            name: 'i-select',
+            type: 'i-select',
+            children: {
+              name: 'option',
+              type: 'i-option',
+              list: [
+                {
+                  value: 'man',
+                  title: '男'
+                },
+                {
+                  value: 'woman',
+                  title: '女'
+                }
+              ]
+              }
+          }
+        ]
       }
     },
     computed: {
-      triggerClasses () {
+      triggerClasses() {
         return [
           'trigger-icon',
           this.collapsed ? 'rotate' : ''
@@ -72,7 +148,7 @@ import LoginTable from './table'
       }
     },
     methods: {
-      handleSiderClick () {
+      handleSiderClick() {
         this.collapsed = !this.collapsed
       }
     }

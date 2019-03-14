@@ -4,12 +4,7 @@ import Detail from '@/pages/detail/Detail'
 import Login from '@/pages/login/Login'
 import LoginRow from '@/pages/login/components/row'
 
-export const routes = [
-  {
-    path: '/city',
-    name: 'City',
-    component: City
-  },
+export const routermap = [
   {
     path: '/detail/:id',
     name: 'Detail',
@@ -20,21 +15,13 @@ export const routes = [
     }
   },
   {
-    path: '/Login',
-    name: 'Login',
-    component: Login,
-    meta: {
-      title: '登录页面'
-    },
-    children: [
-      {
-        path: 'row',
-        component: LoginRow
-      }
-    ]
-
-  },
-  {
+    path: '/city',
+    name: 'city',
+    component: City
+  }
+]
+export const routes = [
+   {
     path: '/',
     name: 'Home',
     // component: () => import('@/pages/home/Home')
@@ -42,5 +29,24 @@ export const routes = [
     meta: {
       title: '首页'
     }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: {
+      title: '登录页面',
+      access: ['super_admin']
+    },
+    children: [
+      {
+        path: 'row',
+        component: LoginRow
+      }
+    ]
+  },
+  {
+    path: '*',
+    component: () => import('@/pages/error_404.vue')
   }
 ]

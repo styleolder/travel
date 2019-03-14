@@ -43,13 +43,6 @@ export default {
       password: ''
     }
   },
-  beforeRouteEnter (to, from, next) {
-    console.log(to.name)
-    console.log(from.name)
-    next(vm => {
-      console.log(vm)
-    })
-  },
   computed: {
     ...mapState({
       userName: state => state.user.userName,
