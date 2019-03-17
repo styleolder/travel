@@ -4,10 +4,10 @@ export const setTitle = (title) => {
   window.document.title = title || 'admin'
 }
 
-export const setToken = (token, tokenname = 'token') => {
-  Cookies.set(tokenname, token)
+export const setToken = (token, tokenName = 'token') => {
+  Cookies.set(tokenName, token)
 }
 
-export const getToken = (tokenname = 'token') => {
-  Cookies.get(tokenname)
+export const getToken = (tokenName = 'token') => {
+  return Cookies.get(tokenName)
 }

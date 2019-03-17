@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import {routes} from './router'
-import {setTitle} from '@/lib/util'
+import { routes } from './router'
 import store from '@/store'
 import clonedeep from 'clonedeep'
-
+import { setTitle, setToken, getToken } from '@/lib/util'
 Vue.use(Router)
 
 const router = new Router({
@@ -16,17 +15,24 @@ const router = new Router({
 })
 router.beforeEach((to, from, next) => {
   to.meta && setTitle(to.meta.title)
-  if (!store.state.router.hasGetRules) {
-    store.dispatch('authorization').then(rules => {
-      store.dispatch('concatRoutes', rules).then(routers => {
-        router.addRoutes(clonedeep(routers))
-        next({...to, replace: true})
-      }).catch(() => {
-        next({name: 'login'})
+  const token = getToken()
+  if (token) {
+    if (!store.state.router.hasGetRules) {
+      store.dispatch('authorization').then(rules => {
+        store.dispatch('concatRoutes', rules).then(routers => {
+          router.addRoutes(clonedeep(routers))
+          next({...to, replace: true})
+        }).catch(() => {
+          setToken('')
+          next({name: 'Login'})
+        })
       })
-    })
+    } else {
+      next()
+    }
   } else {
-    next()
+    if (to.name === 'Login') next()
+    else next({ name: 'Login' })
   }
 })
 // const HAS_LOGINED = true

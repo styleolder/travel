@@ -19,7 +19,7 @@ import axios from 'axios'
 import { mapState } from 'vuex'
 // import { baseUrl } from '@/config'
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
     HomeWeeked,
     HomeBordertop,

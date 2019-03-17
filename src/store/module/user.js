@@ -13,10 +13,10 @@ const actions = {
     return new Promise((resolve, reject) => {
       userlogin({ userName, password }).then(res => {
         if (res.status === 200 && res.data.ret) {
-          setToken(res.data.data.toke)
+          setToken(res.data.data.token)
           resolve()
         } else {
-          console.log('登录失败')
+          reject(new Error('登录失败'))
         }
       }).catch(error => {
         reject(error)
@@ -26,10 +26,10 @@ const actions = {
   authorization ({ commit }) {
     return new Promise((resolve, reject) => {
       authorization().then(res => {
+        console.log(res.data.ret)
         if (res.data.ret !== true) {
           reject(new Error('token error'))
         } else {
-          console.log(res.data.data.rules.page)
           resolve(res.data.data.rules.page)
         }
       }).catch(error => {

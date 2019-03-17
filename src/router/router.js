@@ -16,7 +16,7 @@ export const routermap = [
   },
   {
     path: '/city',
-    name: 'city',
+    name: 'City',
     component: City
   }
 ]
@@ -32,7 +32,7 @@ export const routes = [
   },
   {
     path: '/login',
-    name: 'login',
+    name: 'Login',
     component: Login,
     meta: {
       title: '登录页面',

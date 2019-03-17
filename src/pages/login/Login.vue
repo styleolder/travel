@@ -27,8 +27,9 @@ import { mapState, mapMutations, mapActions } from 'vuex'
 import CountTo from '@/components/count-to'
 import SplitPane from '@/components/split-pane'
 import LoginLayout from './components/layout'
+
 export default {
-  name: 'Login',
+  name: 'login',
   components: {
     CountTo,
     SplitPane,
@@ -89,9 +90,8 @@ export default {
     },
     handleUserLogin () {
       this.userlogin(this.username, this.password).then(() => {
-        this.$router.push({
-          name: 'Home'
-        })
+        this.$router.push({name: 'Home'})
+        console.log(this.$router)
       }).catch(error => {
         console.log(error)
       })
