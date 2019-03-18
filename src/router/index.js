@@ -7,7 +7,7 @@ import { setTitle, setToken, getToken } from '@/lib/util'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
+  // mode: 'history',
   routes,
   scrollBehavior(to, from, savedPosition) {
     return {x: 0, y: 0}
@@ -28,8 +28,7 @@ router.beforeEach((to, from, next) => {
         })
       })
     } else {
-      if (to.name === 'Login') next({ name: 'Home' })
-      else next()
+       next()
     }
   } else {
     if (to.name === 'Login') next()

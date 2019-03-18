@@ -1,6 +1,5 @@
 import Mock from 'mockjs'
 import { authorization, user, getindex, getdetail, getcity } from './response/user'
-// import { authorization, user } from './response/user'
 
 Mock.mock(/\/authorization/, 'get', authorization)
 Mock.mock(/\/user/, 'get', user)

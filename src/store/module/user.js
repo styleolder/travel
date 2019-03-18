@@ -12,6 +12,7 @@ const actions = {
   userlogin ({ commit }, { userName, password }) {
     return new Promise((resolve, reject) => {
       userlogin({ userName, password }).then(res => {
+        console.log(res)
         if (res.status === 200 && res.data.ret) {
           setToken(res.data.data.token)
           resolve()

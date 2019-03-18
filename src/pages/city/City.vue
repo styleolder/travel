@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <city-header></city-header>
     <city-search :cities="cities"></city-search>

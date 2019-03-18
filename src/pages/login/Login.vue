@@ -87,6 +87,8 @@ export default {
       this.updateUserName()
     },
     handleUserLogin () {
+      console.log(process.env.BaseUrl)
+      console.log(process.env.NODE_ENV)
       this.userlogin(this.username, this.password).then(() => {
         this.$router.push({name: 'Home'})
       }).catch(error => {

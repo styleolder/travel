@@ -1,4 +1,5 @@
 import axios from '@/lib/axios'
+
 export const getUserName = () => {
   return new Promise((resolve, reject) => {
     const err = null

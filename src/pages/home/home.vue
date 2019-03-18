@@ -48,6 +48,7 @@ export default {
             this.swiperList = data.swiperList
             this.iconsList = data.iconsList
             this.recommendList = data.recommendList
+            console.log(process.env.BaseUrl)
           }
         }
       )
