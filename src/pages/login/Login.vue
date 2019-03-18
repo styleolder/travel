@@ -29,7 +29,7 @@ import SplitPane from '@/components/split-pane'
 import LoginLayout from './components/layout'
 
 export default {
-  name: 'login',
+  name: 'Login',
   components: {
     CountTo,
     SplitPane,
@@ -68,8 +68,6 @@ export default {
     handleChangCouter () {
       this.endVal = this.countVal
       this.$refs.getcount.getCount()
-      console.log(process.env.NODE_ENV)
-      console.log(process.env.BASE_URL)
     },
     handleCityClick () {
       // this.$store.commit(
@@ -91,7 +89,6 @@ export default {
     handleUserLogin () {
       this.userlogin(this.username, this.password).then(() => {
         this.$router.push({name: 'Home'})
-        console.log(this.$router)
       }).catch(error => {
         console.log(error)
       })

@@ -1,8 +1,8 @@
 'use strict'
 const merge = require('webpack-merge')
-const prodEnv = require('./prod.env')
+const prod = require('./prod.env')
 
-module.exports = merge(prodEnv, {
-  NODE_ENV: '"dev"',
-  BASE_URL: '"https://dev.com"'
+module.exports = merge(prod, {
+  NODE_ENV: '"prod"',
+  baseUrl: '"http://127.0.0.1:8080"'
 })

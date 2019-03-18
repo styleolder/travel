@@ -13,9 +13,7 @@ import 'swiper/dist/css/swiper.css'
 import store from './store'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
-
-// if (process.env.NODE_ENV !== 'prod') require('@/mock')
-// import Mock from '@/mock'
+if (process.env.NODE_ENV !== 'dev') require('./mock')
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)

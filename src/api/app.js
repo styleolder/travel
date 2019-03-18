@@ -1,5 +1,4 @@
-import axios from 'axios'
-
+import axios from '@/lib/axios'
 export const getUserName = () => {
   return new Promise((resolve, reject) => {
     const err = null
@@ -19,7 +18,7 @@ export const getUserName = () => {
 }
 export const userlogin = ({username, passsword}) => {
   return axios.request({
-    url: '/api/user.json',
+    url: '/api/user',
     method: 'get',
     data: {
       username,
@@ -40,7 +39,7 @@ export const formgroup = (data) => {
         name: '验证通过'
       })
     } else {
-      reject({
+      resolve({
         code: 401,
         name: '验证不通过'
       })
@@ -49,7 +48,28 @@ export const formgroup = (data) => {
 }
 export const authorization = () => {
   return axios.request({
-    url: '/api/authorization.json',
+    url: '/api/authorization',
     method: 'get'
+  })
+}
+export const getindex = () => {
+  return axios.request({
+    url: '/api/index',
+    method: 'get'
+  })
+}
+export const getCity = () => {
+  return axios.request({
+    url: '/api/city',
+    method: 'get'
+  })
+}
+export const getdetail = ({ id }) => {
+  return axios.request({
+    url: '/api/detail',
+    method: 'get',
+    data: {
+      id
+    }
   })
 }

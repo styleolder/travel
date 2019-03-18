@@ -1,7 +1,5 @@
-import Home from '@/pages/home/Home'
 import City from '@/pages/city/City'
 import Detail from '@/pages/detail/Detail'
-import Login from '@/pages/login/Login'
 import LoginRow from '@/pages/login/components/row'
 
 export const routermap = [
@@ -24,8 +22,8 @@ export const routes = [
    {
     path: '/',
     name: 'Home',
-    // component: () => import('@/pages/home/Home')
-    component: Home,
+    component: () => import('@/pages/home/Home'),
+    // component: Home,
     meta: {
       title: '首页'
     }
@@ -33,7 +31,7 @@ export const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login,
+    component: () => import('@/pages/login/Login'),
     meta: {
       title: '登录页面',
       access: ['super_admin']
@@ -47,6 +45,7 @@ export const routes = [
   },
   {
     path: '*',
-    component: () => import('@/pages/error_404.vue')
+    name: 'errPage',
+    component: () => import('@/pages/error_404')
   }
 ]

@@ -6,18 +6,17 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/api': {
-        target: 'http://192.168.0.104:8080',
-        pathRewrite: {
-          '^/api': '/static/mock'
-        }
-      }
-    },
+    // proxyTable: {
+    //   '/api': {
+    //     target: 'http://192.168.0.104:8080',
+    //     pathRewrite: {
+    //       '^/api': '/static/mock'
+    //     }
+    //   }
+    // },
 
     // Various Dev Server settings
     host: '192.168.0.104', // can be overwritten by process.env.HOST
@@ -52,6 +51,8 @@ module.exports = {
 
   build: {
     // Template for index.html
+    prod: require('./prod.env'),
+    test: require('./test.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
 
     // Paths

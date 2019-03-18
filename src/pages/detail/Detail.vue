@@ -10,8 +10,7 @@
 import DetailBanner from './compinents/banner'
 import DetailHeader from './compinents/header'
 import DetailContent from './compinents/content'
-import axios from 'axios'
-
+import { getdetail } from '@/api/app'
 export default {
   name: 'Detail',
   props: {
@@ -34,20 +33,16 @@ export default {
     }
   },
   methods: {
-    getDetailList () {
-      axios.get('/api/detail.json', {
-        params: {
-          id: this.$route.params.id
-        }
-      })
-        .then(this.getDetailListSucc)
-    },
-    getDetailListSucc (res) {
-      res = res.data
-      if (res.ret && res.data) {
-        const data = res.data
-        this.categoryList = data.categoryList
-      }
+    getDetailList() {
+      getdetail({id: this.$route.params.id})
+        .then(res => {
+          res = res.data
+          if (res.ret && res.data) {
+            const data = res.data
+            this.categoryList = data.categoryList
+          }
+          }
+        )
     }
   },
   mounted () {

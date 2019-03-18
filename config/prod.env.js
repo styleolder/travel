@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
-  NODE_ENV: '"production"',
-  BASE_URL: '"https://production.com"'
+  NODE_ENV: '"prod"',
+  baseUrl: '"http://127.0.0.1:8080"'
 }

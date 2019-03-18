@@ -15,11 +15,11 @@ import HomeIcons from './components/icons'
 import HomeBordertop from './components/bordertop'
 import HomeRecommend from './components/recommend'
 import HomeWeeked from './components/weeked'
-import axios from 'axios'
 import { mapState } from 'vuex'
-// import { baseUrl } from '@/config'
+import { getindex } from '@/api/app'
+
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     HomeWeeked,
     HomeBordertop,
@@ -40,18 +40,17 @@ export default {
     ...mapState(['city'])
   },
   methods: {
-    getHomeInfo () {
-      axios.get('/api/index.json?city=' + this.city)
-        .then(this.getHomeInfoSucc)
-    },
-    getHomeInfoSucc (res) {
-      res = res.data
-      if (res.ret && res.data) {
-        const data = res.data
-        this.swiperList = data.swiperList
-        this.iconsList = data.iconsList
-        this.recommendList = data.recommendList
-      }
+    getHomeInfo() {
+      getindex().then(res => {
+          res = res.data
+          if (res.ret && res.data) {
+            const data = res.data
+            this.swiperList = data.swiperList
+            this.iconsList = data.iconsList
+            this.recommendList = data.recommendList
+          }
+        }
+      )
     }
   },
   mounted () {

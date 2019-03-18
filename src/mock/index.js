@@ -1,6 +1,15 @@
 import Mock from 'mockjs'
-import { getCityInfo } from './response/city'
+import { authorization, user, getindex, getdetail, getcity } from './response/user'
+// import { authorization, user } from './response/user'
 
-Mock.mock('http://127.0.0.1:8080/api/index.json', getCityInfo)
+Mock.mock(/\/authorization/, 'get', authorization)
+Mock.mock(/\/user/, 'get', user)
+Mock.mock(/\/index/, 'get', getindex)
+Mock.mock(/\/detail/, 'get', getdetail)
+Mock.mock(/\/city/, 'get', getcity)
+
+Mock.setup({
+  timeout: 0
+})
 
 export default Mock
